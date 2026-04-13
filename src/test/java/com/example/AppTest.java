@@ -1,22 +1,22 @@
-public class test {
-    public static void main(String[] args) {
-        testCalculatePerformance();
-        System.out.println("All tests passed!");
-    }
+package com.example;
 
-    public static void testCalculatePerformance() {
-        
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class AppTest {
+
+    @Test
+    public void testCalculatePerformance() {
+        // Test Case 1: Alice (S Grade)
         Student s1 = new Student("Alice", 28, 19, 48); 
-        assert s1.totalMarks == 95.0 : "Total marks incorrect for Alice";
-        assert s1.grade.equals("S") : "Grade incorrect for Alice";
-        assert s1.gpa == 9.5 : "GPA incorrect for Alice";
+        assertEquals(95.0, s1.totalMarks, "Total marks incorrect for Alice");
+        assertEquals("S", s1.grade, "Grade incorrect for Alice");
+        assertEquals(9.5, s1.gpa, "GPA incorrect for Alice");
 
-
+        // Test Case 2: Bob (F Grade)
         Student s2 = new Student("Bob", 15, 10, 20); 
-        assert s2.totalMarks == 45.0 : "Total marks incorrect for Bob";
-        assert s2.grade.equals("F") : "Grade incorrect for Bob";
-        assert s2.gpa == 4.5 : "GPA incorrect for Bob";
-
-        System.out.println("testCalculatePerformance passed.");
+        assertEquals(45.0, s2.totalMarks, "Total marks incorrect for Bob");
+        assertEquals("F", s2.grade, "Grade incorrect for Bob");
+        assertEquals(4.5, s2.gpa, "GPA incorrect for Bob");
     }
 }
