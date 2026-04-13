@@ -3,7 +3,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-
 class Student {
     String name;
     double cat, assignment, fat;
@@ -19,11 +18,9 @@ class Student {
         calculatePerformance();
     }
 
-    otal
     public void calculatePerformance() {
         this.totalMarks = cat + assignment + fat;
         
-   
         if (totalMarks >= 90) this.grade = "S";
         else if (totalMarks >= 80) this.grade = "A";
         else if (totalMarks >= 70) this.grade = "B";
@@ -31,7 +28,6 @@ class Student {
         else if (totalMarks >= 50) this.grade = "D";
         else this.grade = "F";
 
-        
         this.gpa = (totalMarks / 10.0);
         if (this.gpa > 10.0) this.gpa = 10.0;
     }
@@ -49,7 +45,7 @@ public class app {
         ArrayList<Student> students = new ArrayList<>();
         int numStudents = 5;
 
-        System.out.println("Enter details for 5 students:");
+        System.out.println("Enter details for " + numStudents + " students:");
         for (int i = 0; i < numStudents; i++) {
             System.out.println("\nStudent " + (i + 1) + ":");
             System.out.print("Name: ");
@@ -64,12 +60,12 @@ public class app {
             students.add(new Student(name, cat, assignment, fat));
         }
 
-       
         System.out.println("\n--- Performance Insights ---");
         for (Student s : students) {
             System.out.println(s);
         }
 
+        
         Collections.sort(students, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
