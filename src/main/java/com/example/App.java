@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-// Student Class definition
+
 class Student {
     String name;
     double cat, assignment, fat;
@@ -19,11 +19,11 @@ class Student {
         calculatePerformance();
     }
 
-    // Calculate Total Marks, Grade, and GPA based on 100M total
+    otal
     public void calculatePerformance() {
         this.totalMarks = cat + assignment + fat;
         
-        // Grade Logic
+   
         if (totalMarks >= 90) this.grade = "S";
         else if (totalMarks >= 80) this.grade = "A";
         else if (totalMarks >= 70) this.grade = "B";
@@ -31,7 +31,7 @@ class Student {
         else if (totalMarks >= 50) this.grade = "D";
         else this.grade = "F";
 
-        // GPA Logic (assuming 10-point scale where total/10 is raw gpa, capped at 10)
+        
         this.gpa = (totalMarks / 10.0);
         if (this.gpa > 10.0) this.gpa = 10.0;
     }
@@ -64,13 +64,12 @@ public class app {
             students.add(new Student(name, cat, assignment, fat));
         }
 
-        // Display Performance Insights
+       
         System.out.println("\n--- Performance Insights ---");
         for (Student s : students) {
             System.out.println(s);
         }
 
-        // Identify Toppers (Sort by total marks descending)
         Collections.sort(students, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
